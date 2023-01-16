@@ -42,10 +42,10 @@
 <ul>
 <li>共通点
 <ul>
-<li>saleforce上での見た目はほぼ同じ(LDSデザインで開発可能)</li>
+<li>saleforce上での見た目はほぼ同じ(<a href="https://www.lightningdesignsystem.com/">LDS</a>を標準で使用)</li>
 <li>classic未対応</li>
 <li>javascriptを用いた開発</li>
-<li>外部 JavaScript ライブラリの使用可能(静的リソースで読み込ませる)</li>
+<li>外部 JavaScript ライブラリの使用可能(静的リソースで読み込ませる,npmは不可)</li>
 <li><a href="https://tailwindcss.com/">Tailwind CSS</a>のようにクラス名でスタイルを与えることができる
 <ul>
 <li>そのため、CSSファイルはLDSでよければ不要</li>
@@ -82,6 +82,7 @@
 </li>
 <li>相違点
 <ul>
+<li>LDSを使用する場合でも、cssで指定が必要</li>
 <li>コントローラーがLWCはJavaScript(ブラウザ動作),VFはApex(サーバ動作)<br />
 そのため、LWCのパフォーマンスが良い</li>
 </ul>
@@ -141,14 +142,16 @@
 </code></pre>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-paginate="true" data-theme="gaia" data-marpit-pagination="11" data-marpit-pagination-total="19" style="--paginate:true;--theme:gaia;">
-<h3>なぜ Lightning Web Components を選択するのか</h3>
+<h6>なぜ Lightning Web Components を選択するのか</h6>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
-    
+    {hello}
 <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
 </code></pre>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-javascript"><span class="hljs-keyword">import</span> { <span class="hljs-title class_">LightningElement</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;lwc&#x27;</span>;
 
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Test</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">LightningElement</span> {}
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Test</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">LightningElement</span> {
+  hello = <span class="hljs-string">&#x27;Hello,World!&#x27;</span>
+}
 </code></pre>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-xml"><span class="hljs-meta">&lt;?xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span>?&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">LightningComponentBundle</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://soap.sforce.com/2006/04/metadata&quot;</span>&gt;</span>
